@@ -6,7 +6,7 @@ from os import path
 def get_pretrained_network(file_id=None, target_file_name=None):
 
     """
-    Downloads pretrained network.
+    Download pretrained network/weights.
 
     Arguments
     ---------
@@ -31,6 +31,7 @@ def get_pretrained_network(file_id=None, target_file_name=None):
     def switch_networks(argument):
         switcher = {
             "dbpn4x": "https://ndownloader.figshare.com/files/13347617",
+            "mriSuperResolution": "https://ndownloader.figshare.com/files/19430123",
             "brainExtraction": "https://ndownloader.figshare.com/files/13729661",
             "brainSegmentation": "https://ndownloader.figshare.com/files/13900010",
             "brainSegmentationPatchBased": "https://ndownloader.figshare.com/files/14249717",
@@ -38,8 +39,10 @@ def get_pretrained_network(file_id=None, target_file_name=None):
             "denoising": "https://ndownloader.figshare.com/files/14235296",
             "wholeTumorSegmentationT2Flair": "https://ndownloader.figshare.com/files/14087045",
             "protonLungMri": "https://ndownloader.figshare.com/files/13606799",
-            "ctHumanLung": "https://ndownloader.figshare.com/files/16874150",
-            "functionalLungMri": "https://ndownloader.figshare.com/files/13824167"
+            "ctHumanLung": "https://ndownloader.figshare.com/files/20005217",
+            "functionalLungMri": "https://ndownloader.figshare.com/files/13824167",
+            "hippMapp3rInitial": "https://ndownloader.figshare.com/files/18068408",
+            "hippMapp3rRefine": "https://ndownloader.figshare.com/files/18068411"
         }
         return(switcher.get(argument, "Invalid argument."))
 
@@ -47,6 +50,7 @@ def get_pretrained_network(file_id=None, target_file_name=None):
         raise ValueError("Missing file id.")
 
     valid_list = ("dbpn4x",
+                  "mriSuperResolution",
                   "brainExtraction",
                   "brainSegmentation",
                   "brainSegmentationPatchBased",
@@ -56,6 +60,8 @@ def get_pretrained_network(file_id=None, target_file_name=None):
                   "protonLungMri",
                   "ctHumanLung",
                   "functionalLungMri",
+                  "hippMapp3rInitial",
+                  "hippMapp3rRefine",
                   "show")
 
     if not file_id in valid_list:
@@ -67,8 +73,7 @@ def get_pretrained_network(file_id=None, target_file_name=None):
     url = switch_networks(file_id)
 
     if target_file_name == None:
-        temp_directory = tempfile.TemporaryDirectory()
-        target_file = tempfile.NamedTemporaryFile(suffix=".h5", dir=temp_directory.name)
+        target_file = tempfile.NamedTemporaryFile(suffix=".h5")
         target_file.close()
         target_file_name = target_file.name
 

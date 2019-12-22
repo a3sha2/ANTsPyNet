@@ -1,19 +1,17 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ANTsPyNet documentation &#8212; ANTsPyNet 0.0.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>Welcome to ANTsPyNet’s documentation! &#8212; ANTsPyNet 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Architectures" href="architectures.html" />
@@ -33,26 +31,29 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="antspynet-documentation">
-<h1>ANTsPyNet documentation<a class="headerlink" href="#antspynet-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-antspynet-s-documentation">
+<h1>Welcome to ANTsPyNet’s documentation!<a class="headerlink" href="#welcome-to-antspynet-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="architectures.html">Architectures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architectures.html#image-voxelwise-segmentation-regression">Image voxelwise segmentation/regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architectures.html#autoencoder">Autoencoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architectures.html#image-classification-regression">Image classification/regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architectures.html#image-super-resolution">Image super-resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architectures.html#image-voxelwise-segmentation">Image voxelwise segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architectures.html#generative-adverserial-networks">Generative adverserial networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#custom-loss-functions">Custom loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#patches">Patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#custom-metrics">Custom metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#custom-normalization-layers">Custom normalization layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#resample-tensor-layer">Resample tensor layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#mixture-density-networks">Mixture density networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html#clustering">Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#dense-unet">Dense Unet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#mixture-density">Mixture density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#image-patch">Image patch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html#super-resolution">Super-resolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html#spatial-transformer-network">Spatial transformer network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#misc">Misc.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
 </ul>
@@ -61,9 +62,9 @@
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 
@@ -99,13 +100,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -123,10 +122,10 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Nick Tustison, Brian Avants, and Nick Cullen.
+      &copy;2019, Nick Tustison, Nick Cullen, Brian Avants.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
